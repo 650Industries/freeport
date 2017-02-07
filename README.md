@@ -14,13 +14,23 @@ Usage:
 
     var portICanUse = await freeportAsync();
 
+    var portICanUseOnInterface = await freeportAsync(undefined, '127.0.0.1');
+
     var portIn9000Range = await freeportAsync(9000);
+
+    var portIn9000RangeOnInterface = await freeportAsync(9000, '192.168.1.43');
 
     var isPort5000Available = await freeportAsync.availableAsync(5000);
 
+    var isPort5000AvailableOnInterface = await freeportAsync.availableAsync(5000, '10.0.0.3');
+
     var listOf5ConsecutiveAvailablePorts = await freeportAsync.rangeAsync(5);
 
+    var listOf5ConsecutiveAvailablePortsOnInterface = await freeportAsync.rangeAsync(5, '::1');
+
     var freeRangeIn12000Range = await freeportAsync.rangeAsync(3, 12000);
+
+    var freeRangeIn12000RangeOnInterface = await freeportAsync.rangeAsync(3, 12000, 'my.host.name');
 
 ```
 
